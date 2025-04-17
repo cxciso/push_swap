@@ -1,0 +1,33 @@
+==1131599== Memcheck, a memory error detector
+==1131599== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==1131599== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==1131599== Command: ./push_swap 1 2 3 4 5
+==1131599== Parent PID: 1131597
+==1131599== 
+==1131599== 
+==1131599== Process terminating with default action of signal 2 (SIGINT)
+==1131599==    at 0x1096AA: find_smallest_unindexed (in /home/ciso/Desktop/Push_swap /push_swap)
+==1131599==    by 0x10972D: set_index (in /home/ciso/Desktop/Push_swap /push_swap)
+==1131599==    by 0x1092AD: push_swap (in /home/ciso/Desktop/Push_swap /push_swap)
+==1131599==    by 0x10924D: main (in /home/ciso/Desktop/Push_swap /push_swap)
+==1131599== 
+==1131599== HEAP SUMMARY:
+==1131599==     in use at exit: 80 bytes in 5 blocks
+==1131599==   total heap usage: 5 allocs, 0 frees, 80 bytes allocated
+==1131599== 
+==1131599== 80 bytes in 5 blocks are still reachable in loss record 1 of 1
+==1131599==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1131599==    by 0x10939A: create_node (in /home/ciso/Desktop/Push_swap /push_swap)
+==1131599==    by 0x10941C: build_stack (in /home/ciso/Desktop/Push_swap /push_swap)
+==1131599==    by 0x10929D: push_swap (in /home/ciso/Desktop/Push_swap /push_swap)
+==1131599==    by 0x10924D: main (in /home/ciso/Desktop/Push_swap /push_swap)
+==1131599== 
+==1131599== LEAK SUMMARY:
+==1131599==    definitely lost: 0 bytes in 0 blocks
+==1131599==    indirectly lost: 0 bytes in 0 blocks
+==1131599==      possibly lost: 0 bytes in 0 blocks
+==1131599==    still reachable: 80 bytes in 5 blocks
+==1131599==         suppressed: 0 bytes in 0 blocks
+==1131599== 
+==1131599== For lists of detected and suppressed errors, rerun with: -s
+==1131599== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
