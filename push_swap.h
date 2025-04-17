@@ -30,6 +30,8 @@ void				set_index(t_node *stack);
 t_node				*find_smallest_unindexed(t_node *stack);
 t_node				*build_stack(int argc, char **argv);
 t_node				*create_node(int value);
+int 				is_duplicate(t_node *stack, int value);
+void 				check_errors(int argc, char **argv);
 
 void				pb(t_node **stack_a, t_node **stack_b);
 void				pa(t_node **stack_a, t_node **stack_b);

@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 #include <stdio.h>
-#include <stdlib.h> // pour exit()
+#include <stdlib.h>
 
 int	main(int argc, char **argv)
 {
@@ -20,13 +20,16 @@ int	main(int argc, char **argv)
 
 	i = 1;
 	if (argc < 2)
+	{
+		ft_printf("Error\n");
 		return (0);
+	}
 	while (i < argc)
 	{
 		if (!is_number(argv[i]))
 		{
 			ft_printf("Error\n");
-			exit(1);
+			return (0);
 		}
 		i++;
 	}

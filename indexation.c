@@ -40,9 +40,10 @@ void	set_index(t_node *stack)
 
 	index = 0;
 	smallest = find_smallest_unindexed(stack);
-		while (find_smallest_unindexed(stack))
+	while (smallest)
 	{
 		smallest->index = index;
 		index++;
+		smallest = find_smallest_unindexed(stack);
 	}
 }

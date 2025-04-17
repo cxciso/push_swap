@@ -1,7 +1,7 @@
 NAME = push_swap
 LIBFT = ./libft/libft.a
 FT_PRINTF = ./ft_printf/libftprintf.a
-CC = gcc
+CC = gcc -g
 CFLAGS = -Wall -Wextra -Werror
 
 
