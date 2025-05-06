@@ -21,14 +21,14 @@ int	main(int argc, char **argv)
 	i = 1;
 	if (argc < 2)
 	{
-		ft_printf("Error\n");
+		write(2, "Error\n", 6);
 		return (0);
 	}
 	while (i < argc)
 	{
 		if (!is_number(argv[i]))
 		{
-			ft_printf("Error\n");
+			write(2, "Error\n", 6);
 			return (0);
 		}
 		i++;

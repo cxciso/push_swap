@@ -12,15 +12,15 @@
 
 #include "push_swap.h"
 
-int is_sorted(t_node *stack)
+int	is_sorted(t_node *stack)
 {
-    while (stack && stack->next)
-    {
-        if (stack->value > stack->next->value)
-            return (0);
-        stack = stack->next;
-    }
-    return (1);
+	while (stack && stack->next)
+	{
+		if (stack->value > stack->next->value)
+			return (0);
+		stack = stack->next;
+	}
+	return (1);
 }
 
 void	push_swap(int argc, char **argv)
@@ -36,10 +36,10 @@ void	push_swap(int argc, char **argv)
 	stack_b = NULL;
 	stack_a = build_stack(argc, argv);
 	if (is_sorted(stack_a))
-    {
-        free_stack(&stack_a);
-        return;
-    }
+	{
+		free_stack(&stack_a);
+		return ;
+	}
 	set_index(stack_a);
 	radix_sort(&stack_a, &stack_b);
 	free_stack(&stack_a);

@@ -54,3 +54,23 @@ void	ra(t_node **stack_a)
 	last->next = tmp;
 	ft_printf("ra\n");
 }
+
+void	sa(t_node **stack)
+{
+	t_node	*first;
+	t_node	*second;
+	int		temp_value;
+	int		temp_index;
+
+	if (!*stack || !(*stack)->next)
+		return ;
+	first = *stack;
+	second = (*stack)->next;
+	temp_value = first->value;
+	temp_index = first->index;
+	first->value = second->value;
+	first->index = second->index;
+	second->value = temp_value;
+	second->index = temp_index;
+	write(1, "sa\n", 3);
+}

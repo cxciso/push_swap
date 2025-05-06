@@ -25,48 +25,48 @@ t_node	*create_node(int value)
 	return (new);
 }
 
-void check_duplicates_and_add(t_node **stack, int value)
+void	check_duplicates_and_add(t_node **stack, int value)
 {
-    t_node *new;
-    t_node *temp;
+	t_node	*new;
+	t_node	*temp;
 
-    if (is_duplicate(*stack, value))
-    {
-        write(2, "Error\n", 6);
-        free_stack(stack);
-        exit(EXIT_FAILURE);
-    }
-    new = create_node(value);
-    if (!new)
-    {
-        free_stack(stack);
-        exit(EXIT_FAILURE);
-    }
-    if (!*stack)
-        *stack = new;
-    else
-    {
-        temp = *stack;
-        while (temp->next)
-            temp = temp->next;
-        temp->next = new;
-    }
+	if (is_duplicate(*stack, value))
+	{
+		write(2, "Error\n", 6);
+		free_stack(stack);
+		exit(EXIT_FAILURE);
+	}
+	new = create_node(value);
+	if (!new)
+	{
+		free_stack(stack);
+		exit(EXIT_FAILURE);
+	}
+	if (!*stack)
+		*stack = new;
+	else
+	{
+		temp = *stack;
+		while (temp->next)
+			temp = temp->next;
+		temp->next = new;
+	}
 }
-
 
 t_node	*build_stack(int argc, char **argv)
 {
-	t_node *stack = NULL;
-    int i = 1;
+	t_node	*stack;
+	int		i;
 
-    check_errors(argc, argv);
-
-    while (i < argc)
-    {
-        check_duplicates_and_add(&stack, ft_atoi(argv[i]));
-        i++;
-    }
-    return (stack);
+	stack = NULL;
+	i = 1;
+	check_errors(argc, argv);
+	while (i < argc)
+	{
+		check_duplicates_and_add(&stack, ft_atoi(argv[i]));
+		i++;
+	}
+	return (stack);
 }
 
 int	stack_size(t_node *stack)
