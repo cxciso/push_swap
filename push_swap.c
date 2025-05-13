@@ -33,24 +33,21 @@ void	push_swap(int argc, char **argv)
 		return ;
 	stack_b = NULL;
 	stack_a = build_stack(argc, argv);
-	if (is_sorted(stack_a))
+	if (!is_sorted(stack_a))
 	{
-		free_stack(&stack_a);
-		return ;
-	}
-	size = stack_size(stack_a);
-	if (size == 2)
-		sort_two(&stack_a);
-	else if (size == 3)
-		sort_three(&stack_a);
-	else if (size <= 5)
-		sort_five(&stack_a, &stack_b);
-	else
-	{
-		set_index(stack_a);
-		radix_sort(&stack_a, &stack_b);
+		size = stack_size(stack_a);
+		if (size == 2)
+			sort_two(&stack_a);
+		else if (size == 3)
+			sort_three(&stack_a);
+		else if (size <= 5)
+			sort_five(&stack_a, &stack_b);
+		else
+		{
+			set_index(stack_a);
+			radix_sort(&stack_a, &stack_b);
+		}
+		free_stack(&stack_b);
 	}
 	free_stack(&stack_a);
-	free_stack(&stack_b);
 }
-

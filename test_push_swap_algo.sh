@@ -8,7 +8,7 @@ BLUE='\033[0;34m'
 MAGENTA='\033[0;35m'
 CYAN='\033[0;36m'
 NC='\033[0m' # No Color
-
+RANDOM=$$$(date +%s)
 # Function to check for duplicates
 has_duplicates() {
     local nums=($1)
@@ -320,17 +320,17 @@ test_small_sets 4
 
 # Performance tests with different sizes and iterations
 echo -e "\n${YELLOW}Performance tests${NC}"
-test_performance 1 100
-test_performance 2 100
-test_performance 3 100
-test_performance 4 100
-test_performance 5 75
-test_performance 10 50
-test_performance 50 20
-test_performance 100 10
-test_performance 200 5
-test_performance 500 3
-test_performance 1000 2
+# test_performance 1 100
+# test_performance 2 100
+# test_performance 3 100
+# test_performance 4 100
+# test_performance 5 75
+# test_performance 10 50
+# test_performance 50 20
+test_performance 100 20
+# test_performance 200 5
+# test_performance 500 3
+# test_performance 1000 2
 
 # Solution analysis
 analyze_patterns

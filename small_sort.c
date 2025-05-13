@@ -61,11 +61,28 @@ int	find_min(t_node *a)
 
 void	push_min(t_node **a, t_node **b)
 {
-	int	min;
+	int		min;
+	t_node	*tmp;
+	int		count;
 
 	min = find_min(*a);
-	while ((*a)->value != min)
-		ra(a);
+	tmp = *a;
+	count = 0;
+	while (tmp->value != min)
+	{
+		tmp = tmp->next;
+		count++;
+	}
+	if (count > 2)
+	{
+		while ((*a)->value != min)
+			rra(a);
+	}
+	else
+	{
+		while ((*a)->value != min)
+			ra(a);
+	}
 	pb(a, b);
 }
 

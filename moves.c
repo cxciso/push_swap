@@ -74,6 +74,7 @@ void	sa(t_node **stack)
 	second->index = temp_index;
 	write(1, "sa\n", 3);
 }
+
 void	rra(t_node **a)
 {
 	t_node	*last;
