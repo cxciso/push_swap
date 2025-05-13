@@ -6,7 +6,7 @@
 /*   By: ciso <ciso@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 12:15:29 by ciso              #+#    #+#             */
-/*   Updated: 2025/04/17 17:48:05 by ciso             ###   ########.fr       */
+/*   Updated: 2025/05/13 18:43:17 by ciso             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,4 +73,22 @@ void	sa(t_node **stack)
 	second->value = temp_value;
 	second->index = temp_index;
 	write(1, "sa\n", 3);
+}
+void	rra(t_node **a)
+{
+	t_node	*last;
+	t_node	*prev;
+
+	if (!*a || !(*a)->next)
+		return ;
+	last = *a;
+	while (last->next)
+	{
+		prev = last;
+		last = last->next;
+	}
+	prev->next = NULL;
+	last->next = *a;
+	*a = last;
+	ft_printf("rra\n");
 }

@@ -6,7 +6,7 @@
 /*   By: ciso <ciso@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 12:39:22 by ciso              #+#    #+#             */
-/*   Updated: 2025/04/17 17:13:50 by ciso             ###   ########.fr       */
+/*   Updated: 2025/05/13 18:37:44 by ciso             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ void				check_errors(int argc, char **argv);
 void				pb(t_node **stack_a, t_node **stack_b);
 void				pa(t_node **stack_a, t_node **stack_b);
 void				ra(t_node **stack_a);
+void				sa(t_node **stack);
+void				rra(t_node **stack);
 
 void				free_stack(t_node **stack);
 void				radix_sort(t_node **stack_a, t_node **stack_b);
@@ -43,5 +45,10 @@ int					stack_size(t_node *stack);
 int					get_max_bits(t_node *stack);
 void				move_stack(t_node **stack_a, t_node **stack_b, int bit,
 						int size);
+void				sort_two(t_node **a);
+void				sort_three(t_node **a);
+void				sort_five(t_node **a, t_node **b);
+int					find_min(t_node *a);
+void				push_min(t_node **a, t_node **b);
 
 #endif

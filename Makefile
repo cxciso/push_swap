@@ -5,7 +5,7 @@ CC = gcc -g
 CFLAGS = -Wall -Wextra -Werror
 
 
-SRC = main.c push_swap.c parsing.c utils_stack.c moves.c indexation.c radix.c
+SRC = main.c push_swap.c parsing.c utils_stack.c moves.c indexation.c radix.c small_sort.c
 OBJ = $(SRC:.c=.o)
 
 
